@@ -1,0 +1,4 @@
+{
+	"presets": [["es2015", "stage-0"]],
+	"plugins": [["import", { "style": "css", "libraryName": "antd-mobile" }]]
+}
