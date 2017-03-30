@@ -2,14 +2,10 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 
-
 // 引入React-Router模块
 import { HashRouter } from 'react-router-dom'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
-// import createBrowserHistory from 'history/createBrowserHistory'
-
-// const history = createBrowserHistory()
 
 // 引入单个页面（包括嵌套的子页面）
 import Index from './app/index.jsx';
@@ -34,7 +30,6 @@ class Init extends React.Component {
 
 
 // 配置路由，并将路由注入到id为init的DOM元素中
-
 ReactDOM.render((
     <HashRouter>
         <Router basename="/">
