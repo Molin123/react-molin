@@ -1,6 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+// ant  使用Icon需要
+const svgDirs = [
+  require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
+  // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
+];
+
 module.exports = {
 	context: path.resolve(__dirname, './src'),
 	// 配置服务器
@@ -40,9 +47,14 @@ module.exports = {
       			use: ['style-loader', 'css-loader']
       		},
       		{
-      			test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+      			test: /\.(woff|woff2|eot|ttf)(\?.*$|$)/,
       			use: ['url-loader']
-      		}
+      		},
+      		{
+		        test: /\.(svg)$/i,
+		        use: ['svg-sprite-loader'],
+		        include: svgDirs,  // 把 svgDirs 路径下的所有 svg 文件交给 svg-sprite-loader 插件处理
+		    }
     	],
   	},
   	// ant需要

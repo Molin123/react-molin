@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-import { Button } from 'antd-mobile';
+import { NavBar, Icon } from 'antd-mobile';
 
 
 import styles from './../app.less';
@@ -9,9 +9,14 @@ import styles from './../app.less';
 export default class Index extends React.Component{
 	render(){
         return(
-            <div className="index">
-                <Button>start1111</Button>
-            </div>
+            <div>
+		    	<NavBar leftContent="返回" mode="light" onLeftClick={() => console.log('onLeftClick')}
+		      		rightContent={[
+		        		<Icon key="0" type="search" style={{ marginRight: '0.32rem' }} />,
+		        		<Icon key="1" type="ellipsis" />,
+		      		]}
+		    	>NavBar</NavBar>
+		  	</div>
         )
     }
 }
