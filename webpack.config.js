@@ -9,6 +9,7 @@ module.exports = {
 	},
 	entry: {
 		app: './app.jsx',
+		home: './home.jsx'
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -42,7 +43,6 @@ module.exports = {
       			test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
       			use: ['url-loader']
       		}
-      	// …
     	],
   	},
   	// ant需要
@@ -51,6 +51,11 @@ module.exports = {
 	  	extensions: ['.web.js', '.js', '.json'],     // webpack2 不再需要一个空的字符串
 	},
   	plugins: [
-	    new ExtractTextPlugin('style.css')     // 指定css文件名
+	    // new ExtractTextPlugin('style.css')     // 指定css文件名 打包成一个css
+	    // 分开打包多个css
+	    new ExtractTextPlugin({
+	      filename: '[name].bundle.css',
+	      allChunks: true,
+	    }),
 	]
 };
