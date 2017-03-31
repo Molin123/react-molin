@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 // ant  使用Icon需要
 const svgDirs = [
@@ -81,6 +82,7 @@ module.exports = {
   		// new webpack.optimize.CommonsChunkPlugin('common'),
         // new webpack.HotModuleReplacementPlugin(),
 
+        // html 文件生成配置 需要确保和入口对应
         new HtmlWebpackPlugin({
         	template:'template.ejs',
 		    title: 'app页面',
@@ -94,22 +96,11 @@ module.exports = {
 		    chunks: ['home']
 		}),
 
+		// js压缩
+		new uglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
 	]
 };
-
-// const pageArr = [
-// 	'app',
-// 	'home'
-// ]
-
-// pageArr.forEach((page) => {
-//   const htmlPlugin = new HtmlWebpackPlugin({
-//     filename: `${page}/page.html`,
-//     template: path.resolve(dirVars.pagesDir, `./${page}/html.js`),
-//     chunks: [page, 'commons'],
-//     hash: true, // 为静态资源生成hash值
-//     minify: true,
-//     xhtml: true,
-//   });
-//   configPlugins.push(htmlPlugin);
-// });
