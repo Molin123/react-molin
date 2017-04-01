@@ -1,6 +1,10 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+// 引入标准Fetch及IE兼容依赖
+import 'whatwg-fetch';
+import 'es6-promise/dist/es6-promise.min.js';
+import 'fetch-ie8/fetch.js';
 
 // 引入React-Router模块
 import { HashRouter } from 'react-router-dom'

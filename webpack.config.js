@@ -6,8 +6,8 @@ const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 // ant  使用Icon需要
 const svgDirs = [
-  require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
-  // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
+	require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
+	// path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
 ];
 
 module.exports = {
@@ -15,6 +15,13 @@ module.exports = {
 	// 配置服务器
 	devServer: {
 	    contentBase: path.resolve(__dirname, './src'),  // New
+	    proxy: {
+	    	'/wapapi/User/taskOverView': {
+                changeOrigin: true,
+                target: 'http://fw1.1.lishenglan.cn',
+                secure: false,
+            },
+	    }
 	    
 	},
 	entry: {
@@ -76,21 +83,23 @@ module.exports = {
 	    // 分开打包多个css
 	    new ExtractTextPlugin({
 	      	filename: '[name].[contenthash:8].bundle.css',
-	      	allChunks: true,
+	      	allChunks: false,
 	    }),
 	    // 独立拆分公共模块
   		// new webpack.optimize.CommonsChunkPlugin('common'),
+
+  		// 热加载
         // new webpack.HotModuleReplacementPlugin(),
 
         // html 文件生成配置 需要确保和入口对应
         new HtmlWebpackPlugin({
-        	template:'template.ejs',
+        	template: 'template.ejs',
 		    title: 'app页面',
 		    filename: 'app.html',
 		    chunks: ['app']
 		}),
 		new HtmlWebpackPlugin({
-			template:'template.ejs',
+			template: 'template.ejs',
 		    title: 'home页面',
 		    filename: 'home.html',
 		    chunks: ['home']
@@ -101,6 +110,7 @@ module.exports = {
             compress: {
                 warnings: false
             }
-        })
+        }),
+
 	]
 };
