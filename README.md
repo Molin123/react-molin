@@ -27,7 +27,7 @@
 
 # 目录结构
 
-`
+```
 .
 ├── src
 │   ├── app
@@ -46,7 +46,7 @@
 ├── .babelrc
 ├── package.json
 └── webpack.config.js
-`
+```
 
 
 
