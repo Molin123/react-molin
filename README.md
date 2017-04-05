@@ -31,14 +31,14 @@
 .
 ├── src
 │   ├── app
-│	│	├── index.jsx
-│	│	└── list.jsx
+│   │   ├── index.jsx
+│   │   └── list.jsx
 │   ├── home
-│	│	├── index.jsx
-│	│	└── list.jsx
+│   │   ├── index.jsx
+│   │   └── list.jsx
 │   ├── home.jsx
-│	├── app.jsx
-│	└── template.ejs
+│   ├── app.jsx
+│   └── template.ejs
 ├── output
 │   ├── css
 │   ├── image
