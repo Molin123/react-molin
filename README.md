@@ -48,6 +48,7 @@
 2. deploy
 3. 。。。
 
+
 # 思考
 
 1. .babelrc 中 "presets": [["es2015", "stage-0"]] 里面为什么不能加"react"

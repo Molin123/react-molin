@@ -29,7 +29,7 @@ module.exports = {
 		home: './home.jsx'
 	},
 	output: {
-		path: path.resolve(__dirname, './dist'),
+		path: path.resolve(__dirname, './output'),
 		filename: '[name].[chunkhash:8].bundle.js',
 	},
   	module: {
