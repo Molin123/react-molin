@@ -15,6 +15,8 @@ module.exports = {
 	// 配置服务器
 	devServer: {
 	    contentBase: path.resolve(__dirname, './src'),  // New
+	    // hot:true,
+	    inline:true,
 	    proxy: {
 	    	'/wapapi/User/taskOverView': {
                 changeOrigin: true,
@@ -88,9 +90,6 @@ module.exports = {
 	    // 独立拆分公共模块
   		// new webpack.optimize.CommonsChunkPlugin('common'),
 
-  		// 热加载
-        // new webpack.HotModuleReplacementPlugin(),
-
         // html 文件生成配置 需要确保和入口对应
         new HtmlWebpackPlugin({
         	template: 'template.ejs',
@@ -112,5 +111,7 @@ module.exports = {
             }
         }),
 
+		// 热加载
+        // new webpack.HotModuleReplacementPlugin(),
 	]
 };
