@@ -25,6 +25,30 @@
 * react-router-dom^4.0.0
 
 
+# 目录结构
+
+```
+.
+├── src
+│   ├── app
+│	│	├── index.jsx
+│	│	└── list.jsx
+│   ├── home
+│	│	├── index.jsx
+│	│	└── list.jsx
+│   ├── home.jsx
+│	├── app.jsx
+│	└── template.ejs
+├── output
+│   ├── css
+│   ├── image
+│   └── js
+├── .babelrc
+├── package.json
+└── webpack.config.js
+```
+
+
 
 # todoList
 
@@ -42,6 +66,7 @@
 12. ~~css打包存在问题（4.5 done）~~
 13. 验证多less文件的合并情况
 14. 热更新响应太慢，可能和start时的Warning有关
+15. 图片目录
 
 
 
