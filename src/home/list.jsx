@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 import { Table } from 'antd-mobile';
 
 
-import styles from './../app.less';
+import styles from './../home.less';
 
 const columns = [
   { title: '标题', dataIndex: 'title', key: 'title', width: '1rem', fixed: 'left' },
