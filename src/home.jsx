@@ -12,8 +12,8 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 
 
 // 引入单个页面（包括嵌套的子页面）
-import Index from './app/index.jsx';
-import List from './app/list.jsx';
+import Index from './home/index.jsx';
+import List from './home/list.jsx';
 
 class Init extends React.Component {
     constructor(props) {

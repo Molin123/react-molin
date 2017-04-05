@@ -83,7 +83,7 @@ module.exports = {
 	    // 分开打包多个css
 	    new ExtractTextPlugin({
 	      	filename: '[name].[contenthash:8].bundle.css',
-	      	allChunks: false,
+	      	allChunks: true,
 	    }),
 	    // 独立拆分公共模块
   		// new webpack.optimize.CommonsChunkPlugin('common'),

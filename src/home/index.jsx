@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 import { NavBar, Icon } from 'antd-mobile';
 
 
-import styles from './../app.less';
+import styles from './../home.less';
 
 export default class Index extends React.Component{
 	render(){
