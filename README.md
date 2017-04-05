@@ -25,6 +25,24 @@
 * react-router-dom^4.0.0
 
 
+# 运行
+
+```
+git clone https://github.com/Molin123/react-molin.git
+npm install --registry https://registry.npm.taobao.org info underscore 
+npm run start
+```
+
+# 编译
+
+```
+npm run build
+```
+
+编译后的文件会生成到`output`目录下，直接将这个目录下的文件部署到服务器上即可。
+
+
+
 # 目录结构
 
 ```
