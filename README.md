@@ -82,7 +82,7 @@ npm run build
 10. ~~打包后js文件过大（3.31 已做压缩处理 后期进一步优化）~~
 11. ~~热更新（4.5 done）~~
 12. ~~css打包存在问题（4.5 done）~~
-13. 验证多less文件的合并情况
+13. ~~验证多less文件的合并情况（4.6 done）~~
 14. 热更新响应太慢，可能和start时的Warning有关
 15. 图片目录
 
@@ -101,4 +101,4 @@ npm run build
 2. react-router  react-router-dom
 3. BrowserRouter 未调试成功，最后选用 HashRouter
 4. new webpack.optimize.CommonsChunkPlugin('common')拆分后，本地开发无法加载到css，两个入口的js大小不一样
-5. --inline 和 --hot 都何以实现热更新  区别？  对于[hash]和[chunkhash]支持？同时加上plugins会内存泄漏
+5. --inline 和 --hot 都可以实现热更新  区别？  对于[hash]和[chunkhash]支持情况？同时加上plugins会内存泄漏？
