@@ -30,8 +30,10 @@
 ```
 git clone https://github.com/Molin123/react-molin.git
 npm install --registry https://registry.npm.taobao.org info underscore 
-npm run start
+npm run start -- 127.0.0.1
 ```
+
+然后即可以访问`http://127.0.0.1:1024/home.html#/`看到页面了
 
 # 编译
 
@@ -73,7 +75,7 @@ npm run build
 1. ~~支持多入口（3.30 done）~~
 2. ~~common拆分（暂时不做）~~
 3. ~~静态文件加戳（3.31 done）~~
-4. dev-server配置
+4. ~~dev-server配置（4.6 done）~~
 5. 目录结构优化
 6. ~~webpack配置拆分（暂时不需要）~~
 7. ~~使用react-router路由（3.30 done）~~

@@ -10,7 +10,7 @@ export default class Index extends React.Component{
 	render(){
         return(
             <div>
-		    	<NavBar leftContent="返回2s1" mode="light" onLeftClick={() => console.log('onLeftClick')}
+		    	<NavBar leftContent="返回2" mode="light" onLeftClick={() => console.log('onLeftClick')}
 		      		rightContent={[
 		        		<Icon key="0" type="search" style={{ marginRight: '0.32rem' }} />,
 		        		<Icon key="1" type="ellipsis" />,

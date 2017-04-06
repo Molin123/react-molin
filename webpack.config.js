@@ -15,6 +15,7 @@ module.exports = {
 	// 配置服务器
 	devServer: {
 	    contentBase: path.resolve(__dirname, './src'),  // New
+	    port: 1024,
 	    // hot:true,
 	    inline:true,
 	    proxy: {
