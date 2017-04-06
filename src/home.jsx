@@ -15,6 +15,8 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import Index from './home/index.jsx';
 import List from './home/list.jsx';
 
+import styles from './home.less';
+
 class Init extends React.Component {
     constructor(props) {
         super(props);

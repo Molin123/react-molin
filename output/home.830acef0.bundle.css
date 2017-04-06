@@ -1,0 +1,15 @@
+.home {
+  background: #666;
+}
+.home .content {
+  font-size: 16px;
+}
+.list {
+  background: #888;
+}
+.list .item {
+  width: 100px;
+}
+body {
+  border: 1px solid black;
+}
