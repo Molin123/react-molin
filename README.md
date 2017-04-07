@@ -51,9 +51,11 @@ npm run build
 .
 ├── src
 │   ├── app
+│   │   ├── images/
 │   │   ├── index.jsx
 │   │   └── list.jsx
 │   ├── home
+│   │   ├── images/
 │   │   ├── index.jsx
 │   │   └── list.jsx
 │   ├── home.jsx
