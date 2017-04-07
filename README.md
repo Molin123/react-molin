@@ -60,15 +60,55 @@ npm run build
 │   ├── app.jsx
 │   └── template.ejs
 ├── output
-│   ├── css
-│   ├── image
-│   └── js
+│   ├── images/
+│   ├── app.html
+│   ├── app.css
+│   ├── app.js
+│   ├── home.html
+│   ├── home.css
+│   └── home.js
 ├── .babelrc
 ├── package.json
 └── webpack.config.js
 ```
 
+1. 其中`home`和`app`是两个单独的页面
+2. `src/template.ejs`为生成HTML文件的模板，可自由修改
+3. `output/`目录下是build后的生成文件，可直接不熟到服务器
 
+
+# 多页面入口配置
+
+如果想在项目里面增加入口，只需要修改`webpack.config.js`文件即可
+
+在`entry`里面增加入口
+```
+entry: {
+	app: './app.jsx',
+	home: './home.jsx'
+},
+```
+
+在`plugins`里面增加输出HTML的配置
+
+```
+plugins: [
+	// ...
+	new HtmlWebpackPlugin({
+    	template: 'template.ejs',
+	    title: 'app页面',
+	    filename: 'app.html',
+	    chunks: ['app']
+	}),
+	new HtmlWebpackPlugin({
+		template: 'template.ejs',
+	    title: 'home页面',
+	    filename: 'home.html',
+	    chunks: ['home']
+	}),
+	// ...
+]
+```
 
 # todoList
 
@@ -76,7 +116,7 @@ npm run build
 2. ~~common拆分（暂时不做）~~
 3. ~~静态文件加戳（3.31 done）~~
 4. ~~dev-server配置（4.6 done）~~
-5. 目录结构优化
+5. ~~目录结构优化（4.7 done）~~
 6. ~~webpack配置拆分（暂时不需要）~~
 7. ~~使用react-router路由（3.30 done）~~
 8. ~~fetch语法支持（4.1 done）~~
@@ -85,8 +125,9 @@ npm run build
 11. ~~热更新（4.5 done）~~
 12. ~~css打包存在问题（4.5 done）~~
 13. ~~验证多less文件的合并情况（4.6 done）~~
-14. 热更新响应太慢，可能和start时的Warning有关
-15. 图片目录
+14. ~~图片目录（4.7 done）~~
+15. 热更新响应太慢，可能和start时的Warning有关
+
 
 
 
