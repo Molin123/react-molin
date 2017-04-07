@@ -128,7 +128,8 @@ plugins: [
 12. ~~css打包存在问题（4.5 done）~~
 13. ~~验证多less文件的合并情况（4.6 done）~~
 14. ~~图片目录（4.7 done）~~
-15. 热更新响应太慢，可能和start时的Warning有关
+15. css压缩
+16. 热更新响应太慢，可能和start时的Warning有关
 
 
 
