@@ -29,7 +29,8 @@
 
 ```
 git clone https://github.com/Molin123/react-molin.git
-npm install --registry https://registry.npm.taobao.org info underscore 
+cd react-molin
+npm install(如果报错，请使用cnpm) 
 npm run start -- 127.0.0.1
 ```
 
