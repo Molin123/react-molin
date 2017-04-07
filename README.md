@@ -97,13 +97,13 @@ entry: {
 plugins: [
 	// ...
 	new HtmlWebpackPlugin({
-    	template: 'template.ejs',
+	    template: 'template.ejs',
 	    title: 'app页面',
 	    filename: 'app.html',
 	    chunks: ['app']
 	}),
 	new HtmlWebpackPlugin({
-		template: 'template.ejs',
+	    template: 'template.ejs',
 	    title: 'home页面',
 	    filename: 'home.html',
 	    chunks: ['home']
