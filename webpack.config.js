@@ -112,7 +112,7 @@ module.exports = {
 		// js压缩
 		new uglifyJsPlugin({
             compress: {
-                warnings: false
+                warnings: false,
             }
         }),
 
