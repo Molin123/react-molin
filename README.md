@@ -142,6 +142,10 @@ plugins: [
 3. 。。。
 
 
+# hot和inline的区别
+
+webpack-dev-server的inline和hot参数都可以在代码改变的时候实现浏览器页面自动更新，具体的区别请参考我的博客[webpack-dev-server中inline和HMR的区别](http://1.molinblog.applinzi.com/blog/webpack-dev-server.html)
+
 # 思考
 
 1. .babelrc 中 "presets": [["es2015", "stage-0"]] 里面为什么不能加"react"

@@ -46,3 +46,7 @@ ReactDOM.render((
         </Router>
     </HashRouter>
 ), document.querySelector('#init'))
+
+if(module.hot){
+    module.hot.accept()
+}
