@@ -16,8 +16,6 @@ module.exports = {
 	devServer: {
 	    contentBase: path.resolve(__dirname, './src'),  // New
 	    port: 1024,
-	    // hot:true,
-	    inline:true,
 	    proxy: {// 跨域代理
 	    	'/wapapi/User/taskOverView': {
                 changeOrigin: true,
@@ -33,7 +31,8 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, './output'),
-		filename: '[name].[chunkhash:8].bundle.js',
+		filename: '[name].[chunkhash:8].bundle.js',     // 推荐使用 ，但是--hot会报错，
+		// filename: '[name].[hash:8].bundle.js',       // --hot时使用，不推荐
 	},
   	module: {
     	rules: [
@@ -116,7 +115,5 @@ module.exports = {
             }
         }),
 
-		// 热加载
-        // new webpack.HotModuleReplacementPlugin(),
 	]
 };
