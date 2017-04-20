@@ -53,14 +53,14 @@ npm run build
 ├── src
 │   ├── app
 │   │   ├── images/
-│   │   ├── index.jsx
-│   │   └── list.jsx
+│   │   ├── index.js
+│   │   └── list.js
 │   ├── home
 │   │   ├── images/
-│   │   ├── index.jsx
-│   │   └── list.jsx
-│   ├── home.jsx
-│   ├── app.jsx
+│   │   ├── index.js
+│   │   └── list.js
+│   ├── home.js
+│   ├── app.js
 │   └── template.ejs
 ├── output
 │   ├── images/
@@ -87,8 +87,8 @@ npm run build
 在`entry`里面增加入口
 ```
 entry: {
-	app: './app.jsx',
-	home: './home.jsx'
+	app: './app.js',
+	home: './home.js'
 },
 ```
 
@@ -149,7 +149,7 @@ webpack-dev-server的inline和hot参数都可以在代码改变的时候实现�
 
 # react-router4如何做Code Splitting
 
-
+react-router4做按需加载，需要使用[bundle-loader]来实现。具体请参考[react-router4实现按需加载](http://1.molinblog.applinzi.com/blog/code-splitting.html)
 
 # 对于deploy的设想
 
