@@ -124,13 +124,14 @@ plugins: [
 7. ~~使用react-router路由（3.30 done）~~
 8. ~~fetch语法支持（4.1 done）~~
 9. ~~静态文件输出（3.31 done）~~
-10. ~~打包后js文件过大（3.31 已做压缩处理 后期进一步优化）~~
+10. ~~打包后js文件过大（3.31 已做压缩处理 后期进一步优化 已做代码拆分）~~
 11. ~~热更新（4.5 done）~~
 12. ~~css打包存在问题（4.5 done）~~
 13. ~~验证多less文件的合并情况（4.6 done）~~
 14. ~~图片目录（4.7 done）~~
 15. css压缩
 16. 热更新响应太慢，可能和start时的Warning有关
+17. ~~代码拆分（4.20 done）~~
 
 
 
@@ -145,6 +146,15 @@ plugins: [
 # hot和inline的区别
 
 webpack-dev-server的inline和hot参数都可以在代码改变的时候实现浏览器页面自动更新，具体的区别请参考我的博客[webpack-dev-server中inline和HMR的区别](http://1.molinblog.applinzi.com/blog/webpack-dev-server.html)
+
+# react-router4如何做Code Splitting
+
+
+
+# 对于deploy的设想
+
+使用gulp-sftp（或其他）实现文件上传到服务器上的指定目录
+
 
 # 思考
 

@@ -1,3 +1,7 @@
+/**
+ * Created by shiyanlin
+ * 810975746@qq.com
+ */
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -11,9 +15,10 @@ import { HashRouter } from 'react-router-dom'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
 
-// 引入单个页面（包括嵌套的子页面）
-import Index from './home/index.jsx';
-import List from './home/list.jsx';
+// 引入单个页面（包括嵌套的子页面）同步方式
+import Index from './home/index.js';
+import List from './home/list.js';
+
 
 import styles from './home.less';
 
@@ -23,16 +28,36 @@ class Init extends React.Component {
         this.state = {
         }
     }
+    componentDidMount() {
+        alert(2)
+    }
     render() {
+        alert(3)
         return (
             <div>
-        	   {this.props.children}
+            8888
             </div>
         )
     }
-    componentDidMount(){
-    }
 }
+
+const routes = [
+    { 
+        path: '/index',
+        component: Index
+    },
+    { 
+        path: '/list',
+        component: List
+    }
+]
+
+const RouteWithSubRoutes = (route) => (
+    <Route path={route.path} render={props => (
+        // 把自路由向下传递来达到嵌套。
+        <route.component {...props} routes={route.routes}/>
+    )}/>
+)
 
 
 // 配置路由，并将路由注入到id为init的DOM元素中
@@ -40,8 +65,9 @@ ReactDOM.render((
     <HashRouter>
         <Router basename="/">
             <div>
-                <Route exact path="/" component={Index} />
-                <Route path="/list" component={List} />
+                {routes.map((route, i) => (
+                    <RouteWithSubRoutes key={i} {...route}/>
+                ))}
             </div>
         </Router>
     </HashRouter>

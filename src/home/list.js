@@ -1,3 +1,7 @@
+/**
+ * Created by shiyanlin
+ * 810975746@qq.com
+ */
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -31,12 +35,14 @@ export default class List extends React.Component{
 	render(){
         return(
             <div style={{ padding: 20 }}>
-				<Table
-					titleFixed
-					columns={columns}
-					dataSource={data}
-				/>
-			</div>
+      				<Table
+      					titleFixed
+      					columns={columns}
+      					dataSource={data}
+      				/>
+      			</div>
         )
     }
 }
+
+module.exports = List;
