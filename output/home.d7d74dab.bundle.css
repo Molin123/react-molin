@@ -1,3 +1,7 @@
+/**
+ * Created by shiyanlin
+ * 810975746@qq.com
+ */
 .home {
   background: #666;
 }
@@ -8,6 +12,10 @@
   background-image: url(images/83d17a29.1.png);
   height: 140px;
 }
+/**
+ * Created by shiyanlin
+ * 810975746@qq.com
+ */
 .list {
   background: #888;
 }
@@ -15,6 +23,10 @@
   width: 100px;
   height: 200px;
 }
+/**
+ * Created by shiyanlin
+ * 810975746@qq.com
+ */
 body {
   border: 1px solid black;
 }

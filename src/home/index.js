@@ -1,3 +1,7 @@
+/**
+ * Created by shiyanlin
+ * 810975746@qq.com
+ */
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -17,7 +21,7 @@ export default class Index extends React.Component{
 		      		]}
 		    	>NavBar</NavBar>
 		    	<img src={require('./images/1.png')} />
-		    	<div className="bg-test">5反反复复44444441111付付</div>
+		    	<div className="bg-test">5反反复复4444444付付</div>
 		  	</div>
         )
     }
