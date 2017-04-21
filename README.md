@@ -34,7 +34,7 @@ npm install(如果报错，请使用cnpm)
 npm run start -- 127.0.0.1
 ```
 
-然后即可以访问`http://127.0.0.1:1024/home.html#/index`看到页面了
+然后即可以访问[http://127.0.0.1:1024/home.html#/index](http://127.0.0.1:1024/home.html#/index)看到页面了
 
 # 编译
 
@@ -61,6 +61,7 @@ npm run build
 │   │   └── list.js
 │   ├── home.js
 │   ├── app.js
+│   ├── bundle.js
 │   └── template.ejs
 ├── output
 │   ├── images/
@@ -77,7 +78,8 @@ npm run build
 
 1. 其中`home`和`app`是两个单独的页面
 2. `src/template.ejs`为生成HTML文件的模板，可自由修改
-3. `output/`目录下是build后的生成文件，可直接不熟到服务器
+3. `src/bundle.js`是代码分割模型
+4. `output/`目录下是build后的生成文件，可直接不熟到服务器
 
 
 # 多页面入口配置
