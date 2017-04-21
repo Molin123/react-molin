@@ -34,7 +34,7 @@ npm install(如果报错，请使用cnpm)
 npm run start -- 127.0.0.1
 ```
 
-然后即可以访问`http://127.0.0.1:1024/home.html#/`看到页面了
+然后即可以访问`http://127.0.0.1:1024/home.html#/index`看到页面了
 
 # 编译
 
