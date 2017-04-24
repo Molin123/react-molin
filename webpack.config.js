@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+
 // ant  使用Icon需要
 const svgDirs = [
     require.resolve('antd-mobile').replace(/warn\.js$/, ''), // 1. 属于 antd-mobile 内置 svg 文件

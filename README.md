@@ -126,14 +126,13 @@ plugins: [
 7. ~~使用react-router路由（3.30 done）~~
 8. ~~fetch语法支持（4.1 done）~~
 9. ~~静态文件输出（3.31 done）~~
-10. ~~打包后js文件过大（3.31 已做压缩处理 后期进一步优化 已做代码拆分）~~
+10. ~~打包后js文件过大（3.31 做压缩处理 4.20 做代码拆分）~~
 11. ~~热更新（4.5 done）~~
 12. ~~css打包存在问题（4.5 done）~~
 13. ~~验证多less文件的合并情况（4.6 done）~~
 14. ~~图片目录（4.7 done）~~
 15. ~~css压缩（4.24 done）~~
-16. 热更新响应太慢，可能和start时的Warning有关
-17. ~~代码拆分（4.20 done）~~
+16. ~~代码拆分（4.20 done）~~
 
 
 
@@ -158,10 +157,3 @@ react-router4做按需加载，需要使用[bundle-loader](https://github.com/we
 使用gulp-sftp（或其他）实现文件上传到服务器上的指定目录
 
 
-# 思考
-
-1. .babelrc 中 "presets": [["es2015", "stage-0"]] 里面为什么不能加"react"
-2. react-router  react-router-dom
-3. BrowserRouter 未调试成功，最后选用 HashRouter
-4. new webpack.optimize.CommonsChunkPlugin('common')拆分后，本地开发无法加载到css，两个入口的js大小不一样
-5. --inline 和 --hot 都可以实现热更新  区别？  对于[hash]和[chunkhash]支持情况？同时加上plugins会内存泄漏？
