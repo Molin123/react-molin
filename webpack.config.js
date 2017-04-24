@@ -8,6 +8,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // ant  使用Icon需要
 const svgDirs = [
@@ -84,14 +85,28 @@ module.exports = {
         "zepto": "Zepto"
     },
     plugins: [
-        // new ExtractTextPlugin('style.css')     // 指定css文件名 打包成一个css
+        // new ExtractTextPlugin('style.css'),     // 指定css文件名 打包成一个css
         // 分开打包多个css
         new ExtractTextPlugin({
             filename: '[name].[contenthash:8].bundle.css',
             allChunks: true,
         }),
+
+
         // 独立拆分公共模块
         // new webpack.optimize.CommonsChunkPlugin('common'),
+
+
+        // js压缩
+        new uglifyJsPlugin({
+            compress: {
+                warnings: false,
+            }
+        }),
+        // css压缩
+        new optimizeCssAssetsPlugin({
+        }),
+
 
         // html 文件生成配置 需要确保和入口对应
         new HtmlWebpackPlugin({
@@ -105,13 +120,6 @@ module.exports = {
             title: 'home页面',
             filename: 'home.html',
             chunks: ['home']
-        }),
-
-        // js压缩
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false,
-            }
         }),
 
     ]
