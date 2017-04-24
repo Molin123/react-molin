@@ -87,36 +87,28 @@ npm run build
 
 # 多页面入口配置
 
-如果想在项目里面增加入口，只需要修改`webpack.config.js`文件即可
-
-在`entry`里面增加入口
-```
-entry: {
-	app: './app.js',
-	home: './home.js'
-},
-```
-
-在`plugins`里面增加输出HTML的配置
+如果想在项目里面增加入口，只需要在`./config/config.page.js`中增加配置即可
 
 ```
-plugins: [
-	// ...
-	new HtmlWebpackPlugin({
-	    template: 'template.ejs',
-	    title: 'app页面',
-	    filename: 'app.html',
-	    chunks: ['app']
-	}),
-	new HtmlWebpackPlugin({
-	    template: 'template.ejs',
-	    title: 'home页面',
-	    filename: 'home.html',
-	    chunks: ['home']
-	}),
-	// ...
-]
+module.exports = {
+    "list": [{
+        "name": "app",
+        "entry": "./app.js",
+        "title": "app页面",
+        "filename": "app.html",
+        "template": "template.ejs",
+        "chunks": "app"
+    }, {
+        "name": "home",
+        "entry": "./home.js",
+        "title": "home页面",
+        "filename": "home.html",
+        "template": "template.ejs",
+        "chunks": "home"
+    }]
+}
 ```
+
 
 # todoList
 
