@@ -71,6 +71,9 @@ npm run build
 │   ├── home.html
 │   ├── home.css
 │   └── home.js
+├── config
+│   ├── config.page.js
+│   └── config.proxy.js
 ├── .babelrc
 ├── package.json
 └── webpack.config.js

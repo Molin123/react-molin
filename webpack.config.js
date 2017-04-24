@@ -10,6 +10,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+// 引入页面配置文件
+const pageConfig = require('./config/config.page.js');
+
+// 引入接口代理配置文件
+const proxyConfig = require('./config/config.proxy.js');
+
 
 // ant  使用Icon需要
 const svgDirs = [
@@ -17,25 +23,53 @@ const svgDirs = [
     // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
 ];
 
+// entry配置
+const entryConfig = {}
+pageConfig.list.map(function(item, index) {
+    entryConfig[item.name] = item.entry
+})
+
+const plugins = [
+    // new ExtractTextPlugin('style.css'),     // 指定css文件名 打包成一个css
+    // 分开打包多个css
+    new ExtractTextPlugin({
+        filename: '[name].[contenthash:8].bundle.css',
+        allChunks: true,
+    }),
+
+    // js压缩
+    new uglifyJsPlugin({
+        compress: {
+            warnings: false,
+        }
+    }),
+
+    // css压缩
+    new optimizeCssAssetsPlugin({}),
+]
+
+// 生成html配置
+pageConfig.list.map(function(item, index) {
+    plugins.push(
+        new HtmlWebpackPlugin({
+            template: item.template,
+            title: item.title,
+            filename: item.filename,
+            chunks: [item.chunks]
+        })
+    )
+})
+
 module.exports = {
     context: path.resolve(__dirname, './src'),
     // 配置服务器
     devServer: {
         contentBase: path.resolve(__dirname, './src'), // New
         port: 1024,
-        proxy: { // 跨域代理
-            '/wapapi/User/taskOverView': {
-                changeOrigin: true,
-                target: 'http://fw1.1.lishenglan.cn',
-                secure: false,
-            },
-        }
+        proxy: proxyConfig
 
     },
-    entry: {
-        app: './app.js',
-        home: './home.js'
-    },
+    entry: entryConfig,
     output: {
         path: path.resolve(__dirname, './output'),
         filename: '[name].[chunkhash:8].bundle.js', // 推荐使用 ，但是--hot会报错，
@@ -85,43 +119,5 @@ module.exports = {
         "react-dom": "ReactDOM",
         "zepto": "Zepto"
     },
-    plugins: [
-        // new ExtractTextPlugin('style.css'),     // 指定css文件名 打包成一个css
-        // 分开打包多个css
-        new ExtractTextPlugin({
-            filename: '[name].[contenthash:8].bundle.css',
-            allChunks: true,
-        }),
-
-
-        // 独立拆分公共模块
-        // new webpack.optimize.CommonsChunkPlugin('common'),
-
-
-        // js压缩
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false,
-            }
-        }),
-        // css压缩
-        new optimizeCssAssetsPlugin({
-        }),
-
-
-        // html 文件生成配置 需要确保和入口对应
-        new HtmlWebpackPlugin({
-            template: 'template.ejs',
-            title: 'app页面',
-            filename: 'app.html',
-            chunks: ['app']
-        }),
-        new HtmlWebpackPlugin({
-            template: 'template.ejs',
-            title: 'home页面',
-            filename: 'home.html',
-            chunks: ['home']
-        }),
-
-    ]
+    plugins: plugins
 };

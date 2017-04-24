@@ -29,13 +29,10 @@ class Init extends React.Component {
         }
     }
     componentDidMount() {
-        alert(2)
     }
     render() {
-        alert(3)
         return (
             <div>
-            8888
             </div>
         )
     }
