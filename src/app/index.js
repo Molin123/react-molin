@@ -12,7 +12,7 @@ import styles from './../app.less';
 
 export default class Index extends React.Component{
 	testFetch = () => {
-		fetch('../mock/list.json',{
+		fetch('../mock/list.json', {
 			method:'get',
             headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

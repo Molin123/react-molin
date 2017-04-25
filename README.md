@@ -15,6 +15,7 @@
 * ES2015
 * less替代css
 * fetch替代Ajax
+* ESlint在代码提交前进行规范检测
 
 
 # 项目依赖
@@ -70,10 +71,12 @@ npm run build
 │   └── **.js
 ├── config
 │   ├── config.page.js
+│   ├── config.server.js
 │   └── config.proxy.js
 ├── mock
 │   └── **.json
 ├── .babelrc
+├── .eslintrc
 ├── package.json
 └── webpack.config.js
 ```
