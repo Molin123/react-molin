@@ -5,10 +5,14 @@
   "main": "src/app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --inline"
+    "start": "webpack-dev-server --inline",
+    "lint": "eslint --ext .js src"
   },
   "author": "shiyanlin",
   "license": "ISC",
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "antd-mobile": "^1.0.7",
     "babel-core": "^6.24.0",
@@ -38,6 +42,11 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.1.1"
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-import": "^1.1.1",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-react": "^6.10.3",
+    "pre-commit": "^1.2.2"
   }
 }
