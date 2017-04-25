@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --inline --host"
+    "start": "webpack-dev-server --inline"
   },
   "author": "shiyanlin",
   "license": "ISC",

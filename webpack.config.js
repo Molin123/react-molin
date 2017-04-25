@@ -14,20 +14,16 @@ const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const pageConfig = require('./config/config.page.js');
 
 // 引入接口代理配置文件
-const proxyConfig = require('./config/config.proxy.js');
+const proxyConfig = require('./config/config.proxy.js'); 
 
+// 引入dev-server配置文件
+const serverConfig = require('./config/config.server.js'); 
 
 // ant  使用Icon需要
 const svgDirs = [
     require.resolve('antd-mobile').replace(/warn\.js$/, ''), // 1. 属于 antd-mobile 内置 svg 文件
     // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
 ];
-
-// entry配置
-const entryConfig = {}
-pageConfig.list.map(function(item, index) {
-    entryConfig[item.name] = item.entry
-})
 
 const plugins = [
     // new ExtractTextPlugin('style.css'),     // 指定css文件名 打包成一个css
@@ -48,6 +44,17 @@ const plugins = [
     new optimizeCssAssetsPlugin({}),
 ]
 
+
+// entry配置
+const entryConfig = {}
+pageConfig.list.map(function(item, index) {
+    // entryConfig[item.name] = item.entry
+    let _obj = {
+    	[item.name]: item.entry
+    }
+    Object.assign(entryConfig, _obj)
+})
+
 // 生成html配置
 pageConfig.list.map(function(item, index) {
     plugins.push(
@@ -64,8 +71,9 @@ module.exports = {
     context: path.resolve(__dirname, './src'),
     // 配置服务器
     devServer: {
-        contentBase: path.resolve(__dirname, './src'), // New
-        port: 1024,
+        contentBase: path.resolve(__dirname, './'), // New
+        port: serverConfig.port,
+        host: serverConfig.host,
         proxy: proxyConfig
 
     },
