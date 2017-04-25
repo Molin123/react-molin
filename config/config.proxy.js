@@ -7,7 +7,7 @@
 module.exports = {
     '/wapapi/User/taskOverView': {
         changeOrigin: true,
-        target: 'http://fw1.1.lishenglan.cn',
+        target: 'http://www.baidu.com',
         secure: false,
     },
 }

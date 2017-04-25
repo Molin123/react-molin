@@ -65,15 +65,14 @@ npm run build
 │   └── template.ejs
 ├── output
 │   ├── images/
-│   ├── app.html
-│   ├── app.css
-│   ├── app.js
-│   ├── home.html
-│   ├── home.css
-│   └── home.js
+│   ├── **.html
+│   ├── **.css
+│   └── **.js
 ├── config
 │   ├── config.page.js
 │   └── config.proxy.js
+├── mock
+│   └── **.json
 ├── .babelrc
 ├── package.json
 └── webpack.config.js

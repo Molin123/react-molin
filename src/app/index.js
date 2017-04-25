@@ -12,13 +12,12 @@ import styles from './../app.less';
 
 export default class Index extends React.Component{
 	testFetch = () => {
-		fetch('/wapapi/User/taskOverView',{
-			method:'post',
+		fetch('../mock/list.json',{
+			method:'get',
             headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
-            credentials: 'include',
-            body:''
+            credentials: 'include'
 		})
 		.then((res) => { return res.json(); })
         .then((data) => {
