@@ -151,6 +151,8 @@ react-router4做按需加载，需要使用[bundle-loader](https://github.com/we
 
 # 如何在react项目中使用ESlint检测代码规范
 
+ESLint是js中目前比较流行的插件化的静态代码检测工具。通过使用它可以保证高质量的代码，尽量减少和提早发现一些错误。使用eslint可以在工程中保证一致的代码风格，特别是当工程变得越来越大、越来越多的人参与进来时，需要加强一些最佳实践。
+
 [如何在react项目中使用ESlint检测代码规范](https://juejin.im/post/58ff0de18d6d810058a69a26)
 
 # 对于deploy的设想
