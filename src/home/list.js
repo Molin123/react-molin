@@ -7,6 +7,7 @@ const ReactDOM = require('react-dom');
 
 import { Table } from 'antd-mobile';
 
+import {Link} from 'react-router-dom'
 
 import styles from './list.less';
 
@@ -40,6 +41,7 @@ export default class List extends React.Component{
       					columns={columns}
       					dataSource={data}
       				/>
+              <Link to='index'>home/index页面</Link>
       			</div>
         )
     }
