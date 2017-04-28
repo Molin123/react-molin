@@ -5,6 +5,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+import {Link} from 'react-router-dom';
+
 import { NavBar, Icon } from 'antd-mobile';
 
 
@@ -20,8 +22,9 @@ export default class Index extends React.Component{
 		        		<Icon key="1" type="ellipsis" />,
 		      		]}
 		    	>NavBar</NavBar>
-		    	<img src={require('./images/1.png')} />
+		    	<img src={require('./images/1.png')} style={{width:'100%'}} />
 		    	<div className="bg-test">5反反复复4444444付付</div>
+		    	<Link to='list' style={{backgroundColor:'#fff',padding:'.1rem 0',display:'block'}}>home/list页面</Link>
 		  	</div>
         )
     }

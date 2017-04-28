@@ -7,6 +7,7 @@ const ReactDOM = require('react-dom');
 
 import { NavBar, Icon } from 'antd-mobile';
 
+import {Link} from 'react-router-dom';
 
 import styles from './../app.less';
 
@@ -39,6 +40,7 @@ export default class Index extends React.Component{
 		        		<Icon key="1" type="ellipsis" />,
 		      		]}
 		    	>NavBar</NavBar>
+		    	<Link to='list'>app/list页面</Link>
 		  	</div>
         )
     }
