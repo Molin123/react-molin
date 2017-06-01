@@ -24,7 +24,7 @@ export default class Index extends React.Component{
 		    	>NavBar</NavBar>
 		    	<img src={require('./images/1.png')} style={{width:'100%'}} />
 		    	<div className="bg-test">5反反复复4444444付付</div>
-		    	<Link to='list' style={{backgroundColor:'#fff',padding:'.1rem 0',display:'block'}}>home/list页面</Link>
+		    	<Link to='list' style={{backgroundColor:'#fff', padding:'.1rem 0', display:'block'}}>home/list页面</Link>
 		  	</div>
         )
     }

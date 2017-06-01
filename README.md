@@ -32,7 +32,7 @@
 git clone https://github.com/Molin123/react-molin.git
 cd react-molin
 npm install(如果报错，请使用cnpm) 
-npm run start -- 127.0.0.1
+npm run start
 ```
 
 然后即可以访问[http://127.0.0.1:1024/home.html#/index](http://127.0.0.1:1024/home.html#/index)看到页面了
