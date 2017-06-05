@@ -147,7 +147,7 @@ webpack-dev-server的inline和hot参数都可以在代码改变的时候实现�
 
 # react-router4如何做Code Splitting
 
-react-router4做按需加载，需要使用[bundle-loader](https://github.com/webpack-contrib/bundle-loader)来实现。具体请参考[react-router4实现按需加载](http://1.molinblog.applinzi.com/blog/code-splitting.html)
+react-router4做按需加载，需要使用[bundle-loader](https://github.com/webpack-contrib/bundle-loader)来实现。具体请参考[react-router4实现按需加载](https://juejin.im/post/58f9717e44d9040069d06cd6)
 
 # 如何在react项目中使用ESlint检测代码规范
 
