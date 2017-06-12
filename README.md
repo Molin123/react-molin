@@ -134,13 +134,11 @@ module.exports = {
 
 # 更新日志
 
-1. 6月20日更新1.0.1版本：修改webpack配置，开发环境下不压缩js/css，缩短热更新时间。
+## 6月12日更新1.0.1版本：
+更新内容：
+1. 修改webpack配置，开发环境下不压缩js/css，缩短热更新时间。
+2. 增加代码部署功能`gulp deploy --env serverName`
 
-# future
-
-1. redux
-2. deploy
-3. 。。。
 
 
 # hot和inline的区别
@@ -157,8 +155,29 @@ ESLint是js中目前比较流行的插件化的静态代码检测工具。通过
 
 [如何在react项目中使用ESlint检测代码规范](https://juejin.im/post/58ff0de18d6d810058a69a26)
 
-# 对于deploy的设想
+# 代码部署
 
-使用gulp-sftp（或其他）实现文件上传到服务器上的指定目录
+使用gulp-sftp实现文件上传到服务器上的指定目录。需要全局安装gulp`npm install -g gulp`。
+
+在`config/config.server.js`中增加部署服务器的配置，可添加多个。
+
+```
+module.exports = {
+    "testServer": {
+        "host": '123.206.221.185',
+        "remotePath": '/root/www',
+        "user": 'root',
+        "pass": 'password'
+    },
+    "testServer2": {
+        "host": '123.206.221.185',
+        "remotePath": '/root/www',
+        "user": 'root',
+        "pass": 'password'
+    }
+}
+```
+
+然后在build之后执行`gulp deploy --env testServer`即可将`output`下的代码部署到对应的服务器上。
 
 

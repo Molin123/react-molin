@@ -50,6 +50,9 @@
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^6.10.3",
+    "gulp": "^3.9.1",
+    "gulp-sftp": "^0.1.5",
+    "minimist": "^1.2.0",
     "pre-commit": "^1.2.2"
   },
   "snyk": true
