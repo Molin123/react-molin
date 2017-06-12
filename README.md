@@ -136,7 +136,7 @@ module.exports = {
 
 # 更新日志
 
-### 6月12日更新1.0.1版本：
+### 1.0.1版本 2017/06/12
 更新内容：
 1. 修改webpack配置，开发环境下不压缩js/css，缩短热更新时间。
 2. 增加代码部署功能`gulp deploy --env serverName`
@@ -145,7 +145,7 @@ module.exports = {
 
 # hot和inline的区别
 
-webpack-dev-server的inline和hot参数都可以在代码改变的时候实现浏览器页面自动更新，具体的区别请参考我的博客[webpack-dev-server中inline和HMR的区别](http://1.molinblog.applinzi.com/blog/webpack-dev-server.html)
+webpack-dev-server的inline和hot参数都可以在代码改变的时候实现浏览器页面自动更新，具体的区别请参考[webpack-dev-server中inline和HMR的区别](https://juejin.im/post/593e5454a0bb9f006b59d85a)
 
 # react-router4如何做Code Splitting
 
