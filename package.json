@@ -1,11 +1,11 @@
 {
   "name": "molin-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --inline",
+    "build": "export NODE_ENV=production && webpack",
+    "start": "export NODE_ENV=development && webpack-dev-server",
     "lint": "eslint --ext .js src",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"

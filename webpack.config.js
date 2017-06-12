@@ -10,6 +10,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+//判断当前运行环境是开发模式还是生产模式
+const nodeEnv = process.env.NODE_ENV || 'development';
+const isPro = nodeEnv === 'production';
+
+console.log("当前运行环境：", isPro ? 'production' : 'development')
+
 // 引入页面配置文件
 const pageConfig = require('./config/config.page.js');
 
@@ -32,18 +38,24 @@ const plugins = [
         filename: '[name].[contenthash:8].bundle.css',
         allChunks: true,
     }),
-
+    new webpack.ProvidePlugin({
+        $:"jquery",
+        jQuery:"jquery",
+        "window.jQuery":"jquery"
+    })
+]
+if (isPro) {
+  plugins.push(
+    // css压缩
+    new optimizeCssAssetsPlugin({}),
     // js压缩
     new uglifyJsPlugin({
         compress: {
             warnings: false,
         }
-    }),
-
-    // css压缩
-    new optimizeCssAssetsPlugin({}),
-]
-
+    })
+  )
+}
 
 // entry配置
 const entryConfig = {}
