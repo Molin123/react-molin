@@ -84,7 +84,7 @@ npm run build
 1. 其中`home`和`app`是两个单独的页面
 2. `src/template.ejs`为生成HTML文件的模板，可自由修改
 3. `src/bundle.js`是代码分割模型
-4. `output/`目录下是build后的生成文件，可直接不熟到服务器
+4. `output/`目录下是build后的生成文件，可直接部署到服务器
 
 
 # 多页面入口配置
@@ -134,7 +134,7 @@ module.exports = {
 
 # 更新日志
 
-1. 6月20日更新1.0.1版本：修改webpack配置，生产环境中不压缩js/css，缩短热更新时间。
+1. 6月20日更新1.0.1版本：修改webpack配置，开发环境下不压缩js/css，缩短热更新时间。
 
 # future
 
