@@ -72,11 +72,13 @@ npm run build
 ├── config
 │   ├── config.page.js
 │   ├── config.server.js
+│   ├── config.deploy.js
 │   └── config.proxy.js
 ├── mock
 │   └── **.json
 ├── .babelrc
 ├── .eslintrc
+├── gulpfile.js
 ├── package.json
 └── webpack.config.js
 ```
@@ -134,7 +136,7 @@ module.exports = {
 
 # 更新日志
 
-## 6月12日更新1.0.1版本：
+### 6月12日更新1.0.1版本：
 更新内容：
 1. 修改webpack配置，开发环境下不压缩js/css，缩短热更新时间。
 2. 增加代码部署功能`gulp deploy --env serverName`
@@ -178,6 +180,6 @@ module.exports = {
 }
 ```
 
-然后在build之后执行`gulp deploy --env testServer`即可将`output`下的代码部署到对应的服务器上。
+然后在build之后执行`gulp deploy --env testServer`即可将`./output`下的代码部署到对应的服务器上。
 
 

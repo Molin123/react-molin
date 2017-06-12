@@ -24,7 +24,6 @@ var remoteServer = deployConfig[serverName];
 
 gulp.task('deploy', function () {
     var sftp = require('gulp-sftp');
-    // var _conf = options.env === 'production' ? remoteServer : localServer;
     return gulp.src(assets + '/**')
         .pipe(sftp(remoteServer))
 })
