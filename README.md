@@ -161,7 +161,7 @@ ESLint是js中目前比较流行的插件化的静态代码检测工具。通过
 
 使用gulp-sftp实现文件上传到服务器上的指定目录。需要全局安装gulp`npm install -g gulp`。
 
-在`config/config.server.js`中增加部署服务器的配置，可添加多个。
+在`config/config.deploy.js`中增加部署服务器的配置，可添加多个。
 
 ```
 module.exports = {
