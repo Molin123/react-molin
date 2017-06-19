@@ -32,7 +32,7 @@
 git clone https://github.com/Molin123/react-molin.git
 cd react-molin
 npm install(如果报错，请使用cnpm) 
-npm run start
+npm run start/npm run start-win
 ```
 
 然后即可以访问[http://127.0.0.1:1024/home.html#/index](http://127.0.0.1:1024/home.html#/index)看到页面了
@@ -40,7 +40,7 @@ npm run start
 # 编译
 
 ```
-npm run build
+npm run build/npm run build-win
 ```
 
 编译后的文件会生成到`output`目录下，直接将这个目录下的文件部署到服务器上即可。
