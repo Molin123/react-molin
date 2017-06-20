@@ -141,6 +141,11 @@ module.exports = {
 1. 修改webpack配置，开发环境下不压缩js/css，缩短热更新时间。
 2. 增加代码部署功能`gulp deploy --env serverName`
 
+### 1.0.2版本 2017/06/20
+更新内容：
+1. 升级webpack版本到3.0.0
+2. 使用webpack3.0.0新功能——范围提升（Scope Hoisting ），提高JavaScript在浏览器中执行速度。
+
 
 
 # hot和inline的区别

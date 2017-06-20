@@ -42,7 +42,8 @@ const plugins = [
         $:"jquery",
         jQuery:"jquery",
         "window.jQuery":"jquery"
-    })
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin()     // 3.0新功能 范围提升 （Scope Hoisting ）
 ]
 if (isPro) {
   plugins.push(
