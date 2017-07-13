@@ -10,6 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+const pxtorem = require('postcss-pxtorem');
+
 //判断当前运行环境是开发模式还是生产模式
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isPro = nodeEnv === 'production';
@@ -30,6 +32,7 @@ const svgDirs = [
     require.resolve('antd-mobile').replace(/warn\.js$/, ''), // 1. 属于 antd-mobile 内置 svg 文件
     // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
 ];
+
 
 const plugins = [
     // new ExtractTextPlugin('style.css'),     // 指定css文件名 打包成一个css
@@ -57,6 +60,8 @@ if (isPro) {
     })
   )
 }
+
+
 
 // entry配置
 const entryConfig = {}
@@ -105,7 +110,21 @@ module.exports = {
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
                 //resolve-url-loader may be chained before lesss-loader if necessary
-                use: ['css-loader', 'less-loader']
+                use: [
+                    'css-loader', 
+                    'less-loader', 
+                    {
+                        loader: 'postcss-loader', 
+                        options: {
+                            plugins:(loader) => [
+                                pxtorem({                // 高清方案，将px转换为rem
+                                    rootValue: 100,
+                                    propWhiteList: [],
+                                })
+                            ]
+                        }
+                    }
+                ]
             })
         }, {
             test: /\.js[x]?$/,

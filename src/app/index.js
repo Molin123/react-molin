@@ -40,7 +40,7 @@ export default class Index extends React.Component{
 		        		<Icon key="1" type="ellipsis" />,
 		      		]}
 		    	>NavBar</NavBar>
-		    	<Link to='list'>app/list页面</Link>
+		    	<Link to='list' className="link-btn">app/list页面</Link>
 		  	</div>
         )
     }

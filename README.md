@@ -146,6 +146,10 @@ module.exports = {
 1. 升级webpack版本到3.0.0
 2. 使用webpack3.0.0新功能——范围提升（Scope Hoisting ），提高JavaScript在浏览器中执行速度。
 
+### 1.0.3版本 2017/07/13
+更新内容：
+1. 新增功能可自动将样式表中的px转换为rem。
+
 
 
 # hot和inline的区别

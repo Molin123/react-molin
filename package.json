@@ -1,6 +1,6 @@
 {
   "name": "molin-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "src/app.js",
   "scripts": {
@@ -52,6 +52,8 @@
     "gulp": "^3.9.1",
     "gulp-sftp": "^0.1.5",
     "minimist": "^1.2.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-pxtorem": "^4.0.1",
     "pre-commit": "^1.2.2"
   }
 }
