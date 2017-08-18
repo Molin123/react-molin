@@ -9,6 +9,8 @@ import { Table } from 'antd-mobile';
 
 import {Link} from 'react-router-dom';
 
+import {withRouter} from 'react-router';
+
 import styles from './../app.less';
 
 const columns = [
@@ -32,7 +34,10 @@ const data = [
     { title: '人物4', a: '小二', c: '33', d: 2, key: '4' },
 ];
 
-export default class List extends React.Component{
+class List extends React.Component{
+    componentDidMount () {
+        console.log(this.props)
+    }
 	render(){
         return(
             <div style={{ padding: 20 }}>
@@ -46,3 +51,5 @@ export default class List extends React.Component{
         )
     }
 }
+
+export default withRouter(List)
