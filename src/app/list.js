@@ -53,3 +53,4 @@ class List extends React.Component{
 }
 
 export default withRouter(List)
+//export default withRouter(connect(...)(Test))//with redux
