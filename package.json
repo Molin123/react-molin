@@ -54,6 +54,8 @@
     "minimist": "^1.2.0",
     "postcss-loader": "^2.0.6",
     "postcss-pxtorem": "^4.0.1",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2"
   }
 }
