@@ -4,10 +4,10 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "build": "export NODE_ENV=production && webpack",
-    "start": "export NODE_ENV=development && webpack-dev-server",
-    "build-win": "SET NODE_ENV=production && webpack",
-    "start-win": "SET NODE_ENV=development && webpack-dev-server",
+    "build": "export NODE_ENV=production&&webpack",
+    "start": "export NODE_ENV=development&&webpack-dev-server",
+    "build-win": "SET NODE_ENV=production&&webpack",
+    "start-win": "SET NODE_ENV=development&&webpack-dev-server",
     "lint": "eslint --ext .js src"
   },
   "author": "shiyanlin",
