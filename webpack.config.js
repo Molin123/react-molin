@@ -41,6 +41,18 @@ const plugins = [
         filename: '[name].[contenthash:8].bundle.css',
         allChunks: true,
     }),
+    new webpack.LoaderOptionsPlugin({
+        options: {
+            postcss: function(){// 高清方案，将px转换为rem
+                return [
+                    require('postcss-pxtorem')({
+                        rootValue: 100,
+                        propWhiteList: [],
+                    })
+                ]
+            }
+        }
+    }),
     new webpack.ProvidePlugin({
         $:"jquery",
         jQuery:"jquery",
@@ -112,18 +124,7 @@ module.exports = {
                 //resolve-url-loader may be chained before lesss-loader if necessary
                 use: [
                     'css-loader', 
-                    'less-loader', 
-                    {
-                        loader: 'postcss-loader', 
-                        options: {
-                            plugins:(loader) => [
-                                pxtorem({                // 高清方案，将px转换为rem
-                                    rootValue: 100,
-                                    propWhiteList: [],
-                                })
-                            ]
-                        }
-                    }
+                    'less-loader',
                 ]
             })
         }, {
