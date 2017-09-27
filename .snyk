@@ -1,0 +1,10 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - webpack-dev-server > compression > debug:
+        patched: '2017-09-27T03:33:15.331Z'
+    - webpack-dev-server > serve-index > debug:
+        patched: '2017-09-27T03:33:15.331Z'

@@ -8,7 +8,9 @@
     "start": "export NODE_ENV=development && webpack-dev-server",
     "build-win": "SET NODE_ENV=production && webpack",
     "start-win": "SET NODE_ENV=development && webpack-dev-server",
-    "lint": "eslint --ext .js src"
+    "lint": "eslint --ext .js src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "shiyanlin",
   "license": "ISC",
@@ -41,7 +43,8 @@
     "url-loader": "^0.5.8",
     "webpack": "3.0.0",
     "webpack-dev-server": "2.5.0",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -55,5 +58,6 @@
     "postcss-loader": "^2.0.6",
     "postcss-pxtorem": "^4.0.1",
     "pre-commit": "^1.2.2"
-  }
+  },
+  "snyk": true
 }
