@@ -40,7 +40,7 @@
     "svg-sprite-loader": "^0.3.0",
     "url-loader": "^0.5.8",
     "webpack": "3.0.0",
-    "webpack-dev-server": "2.5.0",
+    "webpack-dev-server": "4.0.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
