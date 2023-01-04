@@ -37,7 +37,7 @@
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "style-loader": "^0.16.1",
-    "svg-sprite-loader": "^0.3.0",
+    "svg-sprite-loader": "^2.0.1",
     "url-loader": "^0.5.8",
     "webpack": "3.0.0",
     "webpack-dev-server": "2.5.0",
